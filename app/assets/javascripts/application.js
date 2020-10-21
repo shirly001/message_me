@@ -26,12 +26,14 @@ scroll_bottom = function() {
 submit_message = function() {
   $('#message_body').on('keydown', function(e) {
     if (e.keyCode == 13) {
+      // grab the button in #message_body
       $('button').click();
       e.target.value = "";
     };
   });
 };
 
+// needs to wait until turbolinks to loaded too
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.message .close').on('click', function() {
